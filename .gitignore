@@ -1,0 +1,17 @@
+node_modules/
+.npm/
+.deps/
+.git/
+cache/
+artifacts/
+typechain/
+typechain-types/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Build output (if using dist/)
+dist/
+build/
