@@ -18,25 +18,27 @@ contract CarNFT is ERC721 {
         string carType;
         string fuelType;
         string transmission;
+        string image;
         uint256 year;
     }
 
     mapping(uint256 => Rental) private _rentals;
     mapping(uint256 => CarMetadata) private _carData;
+    uint256 private _nextTokenId;
 
     constructor() ERC721("CarNFT", "CAR") {}
 
     function mint(
         address to,
-        uint256 tokenId,
         string memory manufacturer,
         string memory carType,
         string memory fuelType,
         string memory transmission,
+        string memory image,
         uint256 year
     ) external {
-        _mint(to, tokenId);
-        _carData[tokenId] = CarMetadata(manufacturer, carType, fuelType, transmission, year);
+        _mint(to, _nextTokenId);
+        _carData[_nextTokenId] = CarMetadata(manufacturer, carType, fuelType, transmission, image, year);
     }
 
     function rentOut(uint256 tokenId, address user, uint64 duration) external {
