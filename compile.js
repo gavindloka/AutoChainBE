@@ -3,7 +3,7 @@ const path = require('path');
 const solc = require('solc');
 
 // Load all .sol files
-const contractFiles = ['CarListings.sol', 'CarNFT.sol'];
+const contractFiles = ['CarListings.sol', 'CarNFT.sol', 'contact.sol'];
 const sources = {};
 
 for (const file of contractFiles) {

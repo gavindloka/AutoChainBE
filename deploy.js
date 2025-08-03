@@ -23,6 +23,7 @@ async function main() {
 
   const carNFT = await deployContract('CarNFT', deployer);
   const carsForRent = await deployContract('CarsForRent', deployer);
+  const contactObjects = await deployContract('ContactObjects', deployer);
 }
 
 main();
